@@ -1,0 +1,59 @@
+
+:root {
+  --white: #ffffff;
+  --accent: #7c3aed;
+  --light-grey: #f1f5f9;
+
+  --basic-transition: all .2s ease-in;
+
+  --sm-size: 640px;
+  --md-size: 768px;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex__row-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-outlined {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.ml-auto {
+  margin-left: auto
+}

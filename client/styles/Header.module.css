@@ -1,0 +1,144 @@
+.header {
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  position: relative;
+}
+
+.header__toggleMobile {
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+  transition: var(--basic-transition);
+}
+
+.header__toggleMobile:hover {
+  opacity: .5;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  width: 100%;
+  padding: 1rem 0;
+  transition: var(--basic-transition);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  box-shadow: 0 2px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  background: var(--light-grey);
+}
+
+.header__title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.header__title span {
+  color: var(--accent);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  text-align: center;
+}
+
+.nav__item {
+  margin: 0 .8rem;
+}
+
+.nav__link {
+  font-size: 1.4rem;
+  transition: var(--basic-transition);
+}
+
+.nav__link:hover {
+  color: var(--accent);
+}
+
+.icon {
+  margin-top: 1.4rem;
+}
+
+.icon__btn {
+  cursor: pointer;
+  position: relative;
+  transition: var(--basic-transition)
+}
+
+.icon__btn:hover {
+  opacity: .5;
+}
+
+.icon__counter {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: var(--white);
+  background: var(--accent);
+  top: -8px;
+  right: -8px;
+}
+
+.icon__btn:nth-child(2) {
+  margin: 0 .6rem;
+}
+
+.icon__headerIcon {
+  font-size: 1.6rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 640px) {
+
+  .nav {
+    margin-left: 6rem;
+  }
+
+  .nav__link {
+    font-size: 1.1rem;
+  }
+  
+  .nav__list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    text-align: unset;
+  }
+
+  .header__toggleMobile {
+    display: none
+  }
+
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    position: unset;
+    padding: unset;
+    transform: unset;
+    background: unset;
+    box-shadow: unset;
+  }
+
+  .icon {
+    margin-top: 0;
+    margin-left: auto;
+  }
+}
