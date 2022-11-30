@@ -1,9 +1,9 @@
-
 :root {
   --white: #ffffff;
   --accent: #7c3aed;
   --light-grey: #f1f5f9;
-
+  --lighter-grey: #f8fafc;
+  --dark-slate: #0f172a;
   --basic-transition: all .2s ease-in;
 
   --sm-size: 640px;
@@ -16,6 +16,11 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -48,12 +53,54 @@ a {
   align-items: center;
 }
 
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  width: 10rem;
+  padding: .7rem 1rem;
+  cursor: pointer;
+  transition: var(--basic-transition);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 .2rem;
+  white-space: nowrap;
+}
+
+.btn__dark {
+  background: var(--dark-slate);
+  color: var(--white);
+}
+
+.btn__dark:hover {
+  background: var(--accent);
+}
+
 .btn-outlined {
   border: none;
   outline: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .ml-auto {
   margin-left: auto
+}
+
+.dark__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--dark-slate);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--basic-transition);
+}
+
+.dark__overlay.active {
+  opacity: .6;
+  visibility: visible;
 }

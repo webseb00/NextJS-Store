@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from '../styles/Header.module.css'
 import { AiOutlineUser, AiOutlineShopping, AiOutlineHeart, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
-const Header = () => {
+const Header = ({ setCartPanel }) => {
 
   const [active, setActive] = useState(false)
 
@@ -51,7 +51,11 @@ const Header = () => {
             <button type="button" className={`${styles.icon__btn} btn-outlined`}>
               <AiOutlineUser className={styles.icon__headerIcon} />
             </button>
-            <button type="button" className={`${styles.icon__btn} btn-outlined`}>
+            <button 
+              type="button" 
+              className={`${styles.icon__btn} btn-outlined`}
+              onClick={() => setCartPanel(true)}
+            >
               <AiOutlineShopping className={styles.icon__headerIcon} />
               <span className={`${styles.icon__counter} flex__center`}>0</span>
             </button>
