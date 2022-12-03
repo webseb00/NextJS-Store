@@ -10,7 +10,9 @@ const Header = ({ setCartPanel }) => {
   return (
     <header className={`${styles.header} flex__row-center`}>
       <div className="flex__row-center w-full">
-        <h1 className={styles.header__title}>Next<span>Shop</span></h1>
+        <Link href="/">
+          <h1 className={styles.header__title}>Next<span>Shop</span></h1>
+        </Link>
         <button 
           type="button"
           onClick={() => setActive(prev => !prev)}

@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import { Header, CartSidePanel } from '../components/index'
+import { 
+  Header,
+  Hero, 
+  CartSidePanel, 
+  Footer 
+} 
+from '../components/index'
 
 export default function Home() {
 
@@ -14,15 +20,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     
-      <Header setCartPanel={setCartPanel} />
       <CartSidePanel cartPanel={cartPanel} setCartPanel={setCartPanel} />
+
+      <Header setCartPanel={setCartPanel} />
+      <Hero />
       <main>
 
       </main>
 
-      <footer>
-
-      </footer>
+      <Footer />
     </div>
   )
 }

@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  height: 90vh;
+}
+
+.hero__slider {
+  width: 300vw;
+  display: flex;
+  transition: var(--basic-transition);
+}
+
+.hero__slide {
+  width: 100vw;
+}
+
+.hero__slide_image {
+  display: block;
+  object-fit: cover;
+  object-position: 50% 50%;
+  height: 90vh;
+}
+
+.hero__controll {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5%;
+  display: flex;
+}
+
+.hero_controll__btn {
+  border: 1px solid var(--dark-slate);
+  padding: .4rem .8rem;
+  cursor: pointer;
+  transition: var(--basic-transition);
+}
+
+.hero_controll__btn:first-child {
+  margin-right: .4rem;
+}
+
+.hero_controll__btn:hover {
+  opacity: .5;
+}
+
+.hero_controll__icon {
+  display: block;
+  font-size: 1.2rem;
+}

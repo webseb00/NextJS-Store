@@ -3,6 +3,7 @@
   --accent: #7c3aed;
   --light-grey: #f1f5f9;
   --lighter-grey: #f8fafc;
+  --dark-grey: #cbd5e1;
   --dark-slate: #0f172a;
   --basic-transition: all .2s ease-in;
 
@@ -16,6 +17,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  overflow: x-hidden;
 }
 
 img {
@@ -77,6 +82,16 @@ a {
   background: var(--accent);
 }
 
+.btn__accent {
+  background: var(--accent);
+  color: var(--lighter-grey);
+}
+
+.btn__accent:hover {
+  color: var(--accent);
+  background: var(--lighter-grey);
+}
+
 .btn-outlined {
   border: none;
   outline: none;
@@ -98,6 +113,7 @@ a {
   opacity: 0;
   visibility: hidden;
   transition: var(--basic-transition);
+  z-index: 90;
 }
 
 .dark__overlay.active {
