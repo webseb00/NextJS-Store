@@ -11,7 +11,7 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleSliderNext = () => {
-    setCurrentSlide(currentSlide === 2 ? 0 : (prev) => prev + 1);
+    setCurrentSlide(currentSlide >= 2 ? 0 : (prev) => prev + 1);
   }
 
   const handleSliderPrev = () => {

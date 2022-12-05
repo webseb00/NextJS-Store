@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+  max-width: 240px;
+}
+
+.card__header {
+  overflow: hidden;
+}
+
+.card__thumbnail {
+  display: block;
+  object-fit: cover;
+  transition: var(--basic-transition);
+  height: 280px;
+}
+
+.card__thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.card__footer {
+  text-align: center;
+  margin: .2rem 0;
+}
+
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--dark-slate);
+}
+
+.card__price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-slate);
+  opacity: .7;
+  margin-top: .4rem;
+}

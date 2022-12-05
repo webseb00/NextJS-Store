@@ -4,16 +4,18 @@ import { AiOutlineClose } from 'react-icons/ai'
 
 const CartSidePanel = ({ cartPanel, setCartPanel }) => {
 
+  const handleCloseCart = () => setCartPanel(false);
+
   return (
     <>
-      <div className={`${cartPanel ? 'dark__overlay active' : 'dark__overlay'}`} />
+      <div onClick={handleCloseCart} className={`${cartPanel ? 'dark__overlay active' : 'dark__overlay'}`} />
       <div className={`${styles.cart} ${cartPanel && styles.active}`}>
         <header className={styles.cart__header}>
           <h5>Your Cart</h5>
           <button 
             type="button" 
             className="btn-outlined"
-            onClick={() => setCartPanel(false)}
+            onClick={handleCloseCart}
           >
             <AiOutlineClose className={styles.icon} />
           </button>
