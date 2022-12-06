@@ -4,9 +4,10 @@ import ProductCard from './ProductCard'
 import { fetchQuery } from '../utils'
 import { Container, Row, Col } from 'react-grid-system';
 
-const FeaturedProducts = () => {
+const FeaturedProducts = ({ type }) => {
 
   const [products, setProducts] = useState([])
+  const featuredTitle = type.split('')[0].toUpperCase() + type.slice(1,type.length);
 
   useEffect(() => {
     const fetch = async () => {
@@ -22,7 +23,7 @@ const FeaturedProducts = () => {
       <Container>
         <Row>
           <div className={styles.featured__heading}>
-            <h2>Featured Products</h2>
+            <h2>{featuredTitle} Products</h2>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusamus natus sunt ad, nisi vitae soluta doloremque sed. Eum earum necessitatibus delectus doloremque esse ad, aut blanditiis voluptate tenetur ab.</p>
           </div>
         </Row>

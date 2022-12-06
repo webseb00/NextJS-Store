@@ -1,6 +1,7 @@
 .card {
   position: relative;
-  max-width: 240px;
+  max-width: 220px;
+  margin: 0 auto;
 }
 
 .card__header {

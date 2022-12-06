@@ -3,7 +3,8 @@ import Head from 'next/head'
 import { 
   Layout,
   Hero,
-  FeaturedProducts
+  FeaturedProducts,
+  Categories
 } 
 from '../components/index'
 
@@ -12,7 +13,9 @@ export default function Home() {
     <>
       <Layout>
         <Hero />
-        <FeaturedProducts />
+        <FeaturedProducts type="featured" />
+        <Categories />
+        <FeaturedProducts type="trending" />
       </Layout>
     </>
   )

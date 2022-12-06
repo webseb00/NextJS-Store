@@ -5,6 +5,7 @@ import FeaturedProducts from "./FeaturedProducts";
 import Footer from "./Footer";
 import Layout from "./Layout";
 import Product from "./Product";
+import Categories from './Categories';
 
 export {
   Header,
@@ -13,5 +14,6 @@ export {
   FeaturedProducts,
   Footer,
   Layout,
-  Product
+  Product,
+  Categories
 }
