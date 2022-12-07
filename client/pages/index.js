@@ -4,7 +4,8 @@ import {
   Layout,
   Hero,
   FeaturedProducts,
-  Categories
+  Categories,
+  Contact
 } 
 from '../components/index'
 
@@ -16,6 +17,7 @@ export default function Home() {
         <FeaturedProducts type="featured" />
         <Categories />
         <FeaturedProducts type="trending" />
+        <Contact />
       </Layout>
     </>
   )

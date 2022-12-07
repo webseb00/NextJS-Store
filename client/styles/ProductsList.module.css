@@ -1,0 +1,27 @@
+.options {
+  margin-top: 3rem;
+}
+
+.options h4 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.options__wrapper {
+  margin-bottom: 1rem;
+}
+
+.options__list {
+  list-style-type: none;
+}
+
+.options__item {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.options__label {
+  margin-left: 5px;
+}

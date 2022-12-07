@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { Product } from '../../components/'
 import { fetchQuery } from '../../utils'
 
