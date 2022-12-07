@@ -6,6 +6,8 @@ import Footer from "./Footer";
 import Layout from "./Layout";
 import Product from "./Product";
 import Categories from './Categories';
+import Contact from './Contact';
+import List from "./List";
 
 export {
   Header,
@@ -15,5 +17,7 @@ export {
   Footer,
   Layout,
   Product,
-  Categories
+  Categories,
+  Contact,
+  List
 }
