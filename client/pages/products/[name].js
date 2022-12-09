@@ -45,7 +45,7 @@ export default function Products({ products, sub_categories }) {
                       />
                       <label
                         className={styles.options__label} 
-                        for={`${subcat.attributes.name}`}
+                        htmlFor={`${subcat.attributes.name}`}
                         >
                         {subcat.attributes.name}
                       </label>

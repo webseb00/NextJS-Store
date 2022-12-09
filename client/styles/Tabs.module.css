@@ -1,0 +1,43 @@
+.tabs {
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
+  background: var(--light-grey);
+}
+
+.tabs__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.tabs__list a {
+  margin: 0 .5rem;
+  font-size: 1.2rem;
+  transition: var(--basic-transition);
+}
+
+.tabs__list a:hover,
+.tabs__list a.active {
+  opacity: .6;
+  text-decoration: underline;
+}
+
+.tabs__content {
+  margin-top: 1rem;
+}
+
+.tabs__content div {
+  transition: var(--basic-transition);
+  text-align: center;
+  padding: 1rem;
+}
+
+.tab_active {
+  display: block;
+}
+
+.tab_inactive {
+  display: none;
+}

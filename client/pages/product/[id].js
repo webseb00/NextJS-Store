@@ -1,8 +1,12 @@
-import { Product } from '../../components/'
+import { Layout, Product } from '../../components/'
 import { fetchQuery } from '../../utils'
 
 export default function ProductPage({ product }) {
-  return <Product {...product} />
+  return (
+    <Layout>
+      <Product {...product} />
+    </Layout>
+  )
 }
 
 export async function getStaticPaths() {

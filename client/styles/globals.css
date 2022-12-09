@@ -85,6 +85,7 @@ a {
 .btn__accent {
   background: var(--accent);
   color: var(--lighter-grey);
+  border: 2px solid var(--accent);
 }
 
 .btn__accent:hover {
