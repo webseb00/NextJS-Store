@@ -53,6 +53,24 @@
   justify-content: center;
 }
 
+.product__footer {
+  margin-top: 2rem;
+}
+
+.product__footer button {
+  padding: .4rem 1rem;
+  text-transform: capitalize;
+  width: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product__footer button svg {
+  font-size: 1.4rem;
+  margin-right: 5px;
+}
+
 .gallery {
   display: flex;
   justify-content: center;

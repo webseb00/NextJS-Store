@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "man_pages",
+  "info": {
+    "singularName": "man-page",
+    "pluralName": "man-pages",
+    "displayName": "ManPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "heading.page-heading"
+    }
+  }
+}

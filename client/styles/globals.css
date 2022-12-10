@@ -39,6 +39,10 @@ a {
   padding: 0;
 }
 
+.main {
+  margin: 2rem 0;
+}
+
 .w-full {
   width: 100%;
 }

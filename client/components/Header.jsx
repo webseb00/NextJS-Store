@@ -30,8 +30,13 @@ const Header = ({ setCartPanel }) => {
                 </Link>
               </li>
               <li className={styles.nav__item}>
-                <Link className={styles.nav__link} href="/">
-                  Shop
+                <Link className={styles.nav__link} href="/products/female">
+                  Women
+                </Link>
+              </li>
+              <li className={styles.nav__item}>
+                <Link className={styles.nav__link} href="/products/male">
+                  Men
                 </Link>
               </li>
               <li className={styles.nav__item}>

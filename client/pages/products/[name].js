@@ -3,11 +3,12 @@ import { fetchQuery } from '../../utils'
 import { Layout, List } from '../../components/'
 import { Container, Row, Col } from 'react-grid-system'
 import styles from '../../styles/ProductsList.module.css'
+import { ProductsHeading } from '../../components/'
 
-export default function Products({ products, sub_categories }) {
+export default function Products({ products, sub_categories, heading }) {
 
   const [selectedCats, setSelectedCats] = useState([]);
-
+  
   const fetchProductsByCats = () => {
 
   }
@@ -62,7 +63,14 @@ export default function Products({ products, sub_categories }) {
             </aside>
           </Col>
           <Col lg={9}>
-            <List products={products} />
+            <ProductsHeading 
+              title={heading.headingTitle} 
+              subheading={heading.subheading}
+              background={heading.headingBackground} 
+            />
+            <List 
+              products={products} 
+            />
           </Col>
         </Row>
       </Container>
@@ -78,14 +86,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const { data: products } = await fetchQuery(`api/products?filters[category][name][$eq]=${params.name}&populate=*`);
-  
+  const { data: products } = await fetchQuery(`api/products?filters[categories][name][$eq]=${params.name}&populate=*`);
   const { data: sub_categories } = await fetchQuery(`api/sub-categories`)
+  
+  const name = params.name === 'female' ? 'woman-page' : 'man-page'
+
+  const { data } = await fetchQuery(`api/${name}?populate[heading][populate]=*`)
+  const { heading } = data.attributes
 
   return {
     props: {
       products,
-      sub_categories
+      sub_categories,
+      heading
     }
   }
 }

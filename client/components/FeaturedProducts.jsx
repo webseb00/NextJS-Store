@@ -11,7 +11,7 @@ const FeaturedProducts = ({ type }) => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { data } = await fetchQuery('api/products?populate=*')
+      const { data } = await fetchQuery(`api/products?filters[types][name][$eq]=${type}&populate=*`)
       setProducts(data.slice(0, 4))
     }    
 

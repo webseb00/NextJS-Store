@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import styles from '../styles/Product.module.css'
 import { Container, Row, Col } from 'react-grid-system'
 import { BsSuitHeart } from 'react-icons/bs'
-import { HiOutlineScale, HiOutlinePlus, HiOutlineMinus } from 'react-icons/hi'
+import { HiOutlineScale, HiOutlinePlus, HiOutlineMinus, HiChevronLeft } from 'react-icons/hi'
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 import Image from 'next/image'
 import Tabs from './Tabs'
+import { useRouter } from 'next/router'
 
 const Product = ({ attributes }) => {
+  const router = useRouter();
 
   const { title, price, short_description, description, additional_information, image } = attributes;
 
@@ -34,6 +36,7 @@ const Product = ({ attributes }) => {
                   
                   return (
                     <li 
+                      key={idx}
                       className={`${idx === currentIndex ? styles.active : ''}`}
                       onClick={() => setCurrentIndex(idx)}
                     >
@@ -72,7 +75,6 @@ const Product = ({ attributes }) => {
         </Col>
         <Col sm={10} lg={6}>
           <div>
-            
             <div className={styles.product__content}>
               <h2 className={styles.product__title}>{title}</h2>
               <span className={styles.product__price}>{price.toFixed(2)} $</span>
@@ -86,7 +88,7 @@ const Product = ({ attributes }) => {
               <span className={styles.quantity__button} onClick={() => setQuantity(quantity === 1 ? 1 : quantity-1)}>
                 <HiOutlineMinus />
               </span>
-              <input className={styles.quantity__input} type="number" defaultValue={quantity} readOnly />
+              <input className={styles.quantity__input} type="number" value={quantity} readOnly />
               <span className={styles.quantity__button}  onClick={() => setQuantity(quantity+1)}>
                 <HiOutlinePlus />
               </span>
@@ -103,6 +105,16 @@ const Product = ({ attributes }) => {
       <Row>
         <Col>
           <Tabs description={description} additionalInfo={additional_information} />
+          <div className={styles.product__footer}>
+            <button
+              type="button"
+              className="btn btn__dark"
+              onClick={() => router.back()}
+            >
+              <HiChevronLeft />
+              Back
+            </button>
+          </div>
         </Col>
       </Row>
     </Container>

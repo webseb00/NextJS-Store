@@ -8,6 +8,7 @@ import Product from "./Product";
 import Categories from './Categories';
 import Contact from './Contact';
 import List from "./List";
+import ProductsHeading from "./ProductsHeading";
 
 export {
   Header,
@@ -19,5 +20,6 @@ export {
   Product,
   Categories,
   Contact,
-  List
+  List,
+  ProductsHeading
 }

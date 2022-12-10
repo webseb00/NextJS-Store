@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "types",
   "info": {
-    "singularName": "category",
-    "pluralName": "categories",
-    "displayName": "Category",
+    "singularName": "type",
+    "pluralName": "types",
+    "displayName": "Type",
     "description": ""
   },
   "options": {
@@ -19,7 +19,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product",
-      "mappedBy": "categories"
+      "inversedBy": "types"
     }
   }
 }

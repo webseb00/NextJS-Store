@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
     <>
       <CartSidePanel cartPanel={cartPanel} setCartPanel={setCartPanel} />
       <Header setCartPanel={setCartPanel} />
-        <main>{children}</main>
+        <main className="main">{children}</main>
       <Footer />
     </>
   )

@@ -1,5 +1,5 @@
 .featured {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 
 .featured__heading {
@@ -27,7 +27,7 @@
 
 @media (min-width: 992px) {
   .featured {
-    padding: 6rem 0;
+    padding: 3rem 0;
   }
 
   .featured__heading {

@@ -55,7 +55,7 @@ const Footer = () => (
           <input 
             type="email" 
             name="email"
-            autocomplete="off"
+            autoComplete="off"
             placeholder="email@example.com" 
             required
           />

@@ -7,7 +7,6 @@ const Tabs = ({ description, additionalInfo }) => {
 
   const handleTabSelect = e => {
     e.preventDefault();
-    console.log(e.target.dataset.tab)
     setCurrentTab(e.target.dataset.tab);
   }
 

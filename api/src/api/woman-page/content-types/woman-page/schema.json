@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "woman_pages",
+  "info": {
+    "singularName": "woman-page",
+    "pluralName": "woman-pages",
+    "displayName": "WomanPage"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "repeatable": false,
+      "component": "heading.page-heading"
+    }
+  }
+}

@@ -46,17 +46,23 @@
       ],
       "default": "l"
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "products"
-    },
     "sub_categories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::sub-category.sub-category",
       "mappedBy": "products"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
+    },
+    "types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type.type",
+      "inversedBy": "products"
     }
   }
 }

@@ -1,0 +1,31 @@
+.heading {
+  position: relative;
+}
+
+.heading__title,
+.heading__subtitle {
+  position: absolute;
+  
+  padding: .2rem .4rem;
+  background: rgba(0,0,0,.7);
+  color: var(--light-grey);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.heading__title {
+  top: 40%;
+  left: 5%; 
+  transform: translateY(-40%);
+}
+
+.heading__subtitle {
+  top: 70%;
+  left: 30%;
+  transform: translateY(-70%);
+}
+
+.heading__background {
+  height: 12rem;
+  object-fit: cover;
+}
