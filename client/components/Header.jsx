@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Header.module.css'
 import { AiOutlineUser, AiOutlineShopping, AiOutlineHeart, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { useSelector } from 'react-redux'
 
 const Header = ({ setCartPanel }) => {
 
+  const itemsCounter = useSelector(state => state.items.length)
   const [active, setActive] = useState(false)
 
   return (
@@ -64,7 +66,9 @@ const Header = ({ setCartPanel }) => {
               onClick={() => setCartPanel(true)}
             >
               <AiOutlineShopping className={styles.icon__headerIcon} />
-              <span className={`${styles.icon__counter} flex__center`}>0</span>
+              <span className={`${styles.icon__counter} flex__center`}>
+                {itemsCounter}
+              </span>
             </button>
           </div>
         </div>

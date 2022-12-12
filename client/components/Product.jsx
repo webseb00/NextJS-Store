@@ -7,8 +7,11 @@ import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
 import Image from 'next/image'
 import Tabs from './Tabs'
 import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../features/cart/cartSlice'
 
-const Product = ({ attributes }) => {
+const Product = ({ id, attributes }) => {
+  const dispatch = useDispatch();
   const router = useRouter();
 
   const { title, price, short_description, description, additional_information, image } = attributes;
@@ -22,6 +25,18 @@ const Product = ({ attributes }) => {
 
   const handleNextImage = () => {
     currentIndex >= image.data.length-1 ? setCurrentIndex(0) : setCurrentIndex(currentIndex+1)
+  }
+
+  const handleAddToCart = () => {
+    const product = {
+      id,
+      title, 
+      price,
+      image: image.data[0].attributes.formats.thumbnail,
+      quantity: 1
+    }
+
+    dispatch(addToCart(product))
   }
 
   return (
@@ -96,6 +111,7 @@ const Product = ({ attributes }) => {
             <button 
               type="button"
               className="btn btn__accent"
+              onClick={handleAddToCart}
             >
               Add To Cart
             </button>

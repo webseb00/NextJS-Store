@@ -11,14 +11,12 @@ from '../components/index'
 
 export default function Home() {
   return (
-    <>
-      <Layout>
-        <Hero />
-        <FeaturedProducts type="featured" />
-        <Categories />
-        <FeaturedProducts type="trending" />
-        <Contact />
-      </Layout>
-    </>
+    <Layout>
+      <Hero />
+      <FeaturedProducts type="featured" />
+      <Categories />
+      <FeaturedProducts type="trending" />
+      <Contact />
+    </Layout>
   )
 }

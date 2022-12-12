@@ -1,8 +1,19 @@
 import React from 'react'
 import styles from '../styles/CartSidePanel.module.css'
-import { AiOutlineClose } from 'react-icons/ai'
+import { AiOutlineClose, AiOutlineDelete } from 'react-icons/ai'
+import { useSelector, useDispatch } from 'react-redux'
+import { deleteItem, resetCart } from '../features/cart/cartSlice'
+import Image from 'next/image'
+import Link from 'next/link'
+import { calculateTotalCost } from '../utils'
+import CartSVG from '../assets/cart.svg'
 
 const CartSidePanel = ({ cartPanel, setCartPanel }) => {
+
+  const items = useSelector(state => state.items)
+  const dispatch = useDispatch()
+
+  const cartTotalCost = calculateTotalCost(items)
 
   const handleCloseCart = () => setCartPanel(false);
 
@@ -21,29 +32,64 @@ const CartSidePanel = ({ cartPanel, setCartPanel }) => {
           </button>
         </header>
         <div className={styles.cart__body}>
-          <ul className={styles.cart__list}>
-            <li className={styles.cart__item}>
-              <img src="https://preview.colorlib.com/theme/cozastore/images/item-cart-01.jpg.webp" alt="" />
-              <div className={styles.cart__product}>
-                <p>White Shirt</p>
-                <span>1 x $19.00</span>
-              </div>
-            </li>
-          </ul>
-          <h5>Total: $45</h5>
+          {items.length ? 
+            <>
+              <ul className={styles.cart__list}>
+                {items?.map(item => {
+                  const { id, image, title, price, quantity } = item
+
+                  return (
+                    <li id={id} key={id} className={styles.cart__item}>
+                      <Image 
+                        src={`${process.env.NEXT_PUBLIC_BASE_URL}${image.url}`}
+                        width={image.width}
+                        height={image.height}
+                        alt={title}
+                        className={styles.cart__thumbnail}
+                      />
+                      <div className={styles.cart__product}>
+                        <div>
+                          <p>{title}</p>
+                          <span>{`${quantity} x ${price}$`}</span>
+                        </div>
+                        <button 
+                          type="button"
+                          className={styles.cart__remove_item}
+                          onClick={() => dispatch(deleteItem({ id }))}
+                        >
+                          <AiOutlineDelete />
+                        </button>
+                      </div>
+                    </li>
+                  )
+                })}
+              </ul>
+              <h5>Total: {`${cartTotalCost}`}</h5>
+            </>
+           : 
+            <div className={styles.cart__info}>
+              <p>Your cart is empty...</p>
+              <Image src={CartSVG} width={200} height={200} alt="empty cart" /> 
+            </div>
+          }
         </div>
         <div className={styles.cart__cta}>
+          <Link
+            href="/cart"
+          >
+            <button
+              type="button"
+              className="btn btn__dark"
+            >
+              view cart
+            </button>
+          </Link>
           <button
             type="button"
             className="btn btn__dark"
+            onClick={() => dispatch(resetCart())}
           >
-            view cart
-          </button>
-          <button
-            type="button"
-            className="btn btn__dark"
-          >
-            check out
+            reset cart
           </button>
         </div>
       </div>

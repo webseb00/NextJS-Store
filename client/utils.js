@@ -10,3 +10,7 @@ export const fetchQuery = async (path) => {
     throw new Error(err)
   }
 }
+
+export const calculateTotalCost = items => {
+  return items.reduce((a, b) => a + b.price * b.quantity, 0).toFixed(2)
+}

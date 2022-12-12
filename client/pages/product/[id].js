@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { data: product } = await fetchQuery(`api/products/${params.id}?populate=*`)
-
+  
   return {
     props: {
       product
