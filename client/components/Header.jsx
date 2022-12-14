@@ -32,12 +32,12 @@ const Header = ({ setCartPanel }) => {
                 </Link>
               </li>
               <li className={styles.nav__item}>
-                <Link className={styles.nav__link} href="/products/female">
+                <Link className={styles.nav__link} href="/products/female?page=1">
                   Women
                 </Link>
               </li>
               <li className={styles.nav__item}>
-                <Link className={styles.nav__link} href="/products/male">
+                <Link className={styles.nav__link} href="/products/male?page=1">
                   Men
                 </Link>
               </li>

@@ -5,8 +5,7 @@ import { Container, Row, Col } from 'react-grid-system'
 import styles from '../../styles/ProductsList.module.css'
 import { ProductsHeading } from '../../components/'
 
-export default function Products({ products, sub_categories, heading }) {
-
+export default function Products({ meta, products, sub_categories, heading }) {
   const [selectedCats, setSelectedCats] = useState([]);
   
   const fetchProductsByCats = () => {
@@ -54,12 +53,6 @@ export default function Products({ products, sub_categories, heading }) {
                   ))}
                 </ul>
               </div>
-              <div className={styles.options__wrapper}>
-                <h4>Filter By Price</h4>
-              </div>
-              <div className={styles.options__wrapper}>
-                <h4>Sort By Price</h4>
-              </div>
             </aside>
           </Col>
           <Col lg={9}>
@@ -69,6 +62,7 @@ export default function Products({ products, sub_categories, heading }) {
               background={heading.headingBackground} 
             />
             <List 
+              meta={meta}
               products={products} 
             />
           </Col>
@@ -78,15 +72,15 @@ export default function Products({ products, sub_categories, heading }) {
   )
 } 
 
-export async function getStaticPaths() {
-  const { data } = await fetchQuery(`api/categories`)
-  const paths = data.map(category => ({ params: { name: category.attributes.name } }))
+// export async function getStaticPaths() {
+//   const { data } = await fetchQuery(`api/categories`)
+//   const paths = data.map(category => ({ params: { name: category.attributes.name } }))
 
-  return { paths, fallback: false }
-}
+//   return { paths, fallback: false }
+// }
 
-export async function getStaticProps({ params }) {
-  const { data: products } = await fetchQuery(`api/products?filters[categories][name][$eq]=${params.name}&populate=*`);
+export async function getServerSideProps({ query, params }) {
+  const { meta, data: products } = await fetchQuery(`api/products?filters[categories][name][$eq]=${params.name}&populate=*&pagination[page]=${query.page}&pagination[pageSize]=6&pagination[withCount]=true`);
   const { data: sub_categories } = await fetchQuery(`api/sub-categories`)
   
   const name = params.name === 'female' ? 'woman-page' : 'man-page'
@@ -96,6 +90,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      meta,
       products,
       sub_categories,
       heading

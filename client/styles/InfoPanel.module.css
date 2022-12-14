@@ -1,0 +1,19 @@
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.panel__wrapper {
+  position: relative;
+}
+
+.panel__success {
+  background: #15803d;
+  color: var(--light-grey);
+}
+
+.panel p {
+  padding: 2rem;
+}

@@ -80,6 +80,7 @@ a {
 .btn__dark {
   background: var(--dark-slate);
   color: var(--white);
+  border: 2px solid var(--dark-slate);
 }
 
 .btn__dark:hover {

@@ -23,7 +23,6 @@ export const cartSlice = createSlice({
     },
     resetCart: state => {
       state.items = [];
-      itemsTotalCost = 0;
     }
   }
 })

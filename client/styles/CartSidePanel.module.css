@@ -68,14 +68,13 @@
 .cart__item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin: .4rem 0;
   padding: 0 .8rem;
   position: relative;
 }
 
 .cart__thumbnail {
-  width: 100px;
+  width: 80px;
 }
 
 .cart__remove_item {
@@ -83,7 +82,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  margin-top: 2rem;
+  margin-top: 1rem;
   opacity: .4;
   transition: var(--basic-transition);
 }
@@ -97,6 +96,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  margin-left: 1rem;
 }
 
 .cart__product p {

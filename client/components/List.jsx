@@ -1,10 +1,10 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import Pagination from './Pagination'
 import { Container, Row, Col } from 'react-grid-system'
 import styles from '../styles/List.module.css'
 
-const List = ({ products }) => {
-
+const List = ({ products, meta }) => {
   return (
     <div className={styles.list}>
       <Container>
@@ -17,6 +17,11 @@ const List = ({ products }) => {
               />
             </Col>
           )}
+        </Row>
+        <Row>
+          <Col>
+            <Pagination meta={meta} />
+          </Col>
         </Row>
       </Container>
     </div>

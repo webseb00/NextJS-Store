@@ -1,0 +1,25 @@
+.pagination__list {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+.pagination__link {
+  padding: .4rem .6rem;
+  font-size: 1.2rem;
+  border: 1px solid var(--dark-slate);
+  border-radius: 5px;
+  margin: 0 .2rem;
+}
+
+.pagination__link_active {
+  background: var(--accent);
+  color: var(--light-grey);
+}
+
+.pagination__icon {
+  transform: translateY(2px);
+}
