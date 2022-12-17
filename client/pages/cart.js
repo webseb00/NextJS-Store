@@ -11,9 +11,10 @@ import Image from 'next/image'
 import CartSVG from '../assets/cart.svg'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
+
 const Cart = () => {
   const router = useRouter()
-  console.log(router);
+
   const items = useSelector(state => state.items)
   const dispatch = useDispatch()
   const cartTotalCost = calculateTotalCost(items)
@@ -58,7 +59,7 @@ const Cart = () => {
                             <p>{price}</p>
                           </td>
                           <td>{quantity}</td>
-                          <td>{cartTotalCost}$</td>
+                          <td>{quantity*price}$</td>
                           <td>
                             <button 
                               type="button"

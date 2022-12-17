@@ -10,6 +10,7 @@ import Contact from './Contact';
 import List from "./List";
 import ProductsHeading from "./ProductsHeading";
 import Pagination from "./Pagination";
+import CheckoutForm from "./CheckoutForm";
 
 export {
   Header,
@@ -23,5 +24,6 @@ export {
   Contact,
   List,
   ProductsHeading,
-  Pagination
+  Pagination,
+  CheckoutForm
 }
